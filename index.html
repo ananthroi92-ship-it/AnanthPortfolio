@@ -11,374 +11,245 @@
   </title>
 
   <meta name="description"
-    content="Enterprise Product Strategist & Senior Business Analyst specializing in Hospitality SaaS, Payments, Enterprise Integrations, Mobile Apps and AI-driven product delivery." />
+    content="Enterprise Product Strategist specializing in Hospitality SaaS, Enterprise Integrations, Payments, Mobile Apps and AI-driven delivery." />
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 
   <style>
-
-    *{
-      scroll-behavior:smooth;
+    html {
+      scroll-behavior: smooth;
     }
 
-    body{
-      font-family:'Inter',sans-serif;
-      background:#030712;
-      color:#E2E8F0;
-      overflow-x:hidden;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #07111f;
+      overflow-x: hidden;
+      color: #E2E8F0;
     }
 
-    ::selection{
-      background:#2563EB;
-      color:white;
+    body::before {
+      content: "";
+      position: fixed;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent 60%);
+      top: -200px;
+      right: -150px;
+      z-index: -1;
     }
 
-    #progressBar{
-      position:fixed;
-      top:0;
-      left:0;
-      height:4px;
-      width:0%;
-      z-index:99999;
-      background:linear-gradient(to right,#2563EB,#38BDF8);
-      box-shadow:0 0 20px #38BDF8;
-      transition:width 0.15s ease;
+    body::after {
+      content: "";
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.10), transparent 60%);
+      bottom: -200px;
+      left: -150px;
+      z-index: -1;
     }
 
-    .hero-bg{
+    .glass {
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-bg {
       background:
-      radial-gradient(circle at top right,rgba(37,99,235,0.18),transparent 28%),
-      radial-gradient(circle at bottom left,rgba(14,165,233,0.12),transparent 28%),
-      linear-gradient(135deg,#020617,#07111F,#0F172A);
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.20), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.15), transparent 30%);
     }
 
-    .glass{
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.06);
-      backdrop-filter:blur(14px);
+    .primary-btn {
+      background: linear-gradient(to right, #2563EB, #38BDF8);
+      transition: 0.3s ease;
     }
 
-    .glass-light{
-      background:rgba(255,255,255,0.02);
-      border:1px solid rgba(255,255,255,0.04);
-      backdrop-filter:blur(10px);
+    .primary-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
     }
 
-    .gradient-text{
-      background:linear-gradient(to right,#60A5FA,#38BDF8);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+    .card-hover {
+      transition: 0.35s ease;
     }
 
-    .primary-btn{
-      background:linear-gradient(to right,#2563EB,#0EA5E9);
-      transition:0.35s ease;
-      position:relative;
-      overflow:hidden;
+    .card-hover:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.30);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     }
 
-    .primary-btn:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 35px rgba(37,99,235,0.28);
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
 
-    .primary-btn::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:-100%;
-      width:100%;
-      height:100%;
-      background:linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.2),
-      transparent
-      );
-      transition:0.7s ease;
+    .section-sub {
+      color: #94A3B8;
+      font-size: 1.1rem;
     }
 
-    .primary-btn:hover::before{
-      left:100%;
+    .logo-img {
+      height: 42px;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
     }
 
-    .outline-btn{
-      transition:0.35s ease;
+    .light-logo {
+      filter: none;
     }
 
-    .outline-btn:hover{
-      background:white;
-      color:black;
-      transform:translateY(-3px);
+    .tag {
+      background: rgba(59, 130, 246, 0.12);
+      color: #93C5FD;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
     }
 
-    .advanced-card{
-      position:relative;
-      transition:0.4s ease;
-      overflow:hidden;
+    .fade-up {
+      animation: fadeUp 1s ease;
     }
 
-    .advanced-card:hover{
-      transform:translateY(-10px);
-      border-color:rgba(96,165,250,0.4);
-      box-shadow:0 20px 60px rgba(37,99,235,0.15);
-    }
-
-    .advanced-card::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(
-      135deg,
-      transparent,
-      rgba(255,255,255,0.03),
-      transparent
-      );
-      transform:translateX(-100%);
-      transition:0.7s ease;
-    }
-
-    .advanced-card:hover::after{
-      transform:translateX(100%);
-    }
-
-    .fade-up{
-      animation:fadeUp 1s ease;
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(35px);
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
       }
-      to{
-        opacity:1;
-        transform:translateY(0px);
+
+      to {
+        opacity: 1;
+        transform: translateY(0px);
       }
     }
 
-    .logo-img{
-      height:34px;
-      object-fit:contain;
-      opacity:0.8;
-      filter:grayscale(100%) brightness(1.4);
-      transition:0.3s ease;
+    .timeline {
+      border-left: 2px solid rgba(255, 255, 255, 0.08);
+      padding-left: 35px;
     }
 
-    .logo-img:hover{
-      opacity:1;
-      filter:grayscale(0%);
-      transform:scale(1.05);
+    .timeline-item {
+      position: relative;
     }
 
-    .section-title{
-      font-size:3rem;
-      line-height:1.1;
-      font-weight:900;
-      letter-spacing:-2px;
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -45px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: #38BDF8;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.6);
     }
 
-    .nav-blur{
-      background:rgba(3,7,18,0.72);
-      backdrop-filter:blur(14px);
-    }
-
-    .grid-auto{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-      gap:24px;
-    }
-
-    .section-padding{
-      padding-top:110px;
-      padding-bottom:110px;
-    }
-
-    .tag{
-      background:rgba(37,99,235,0.12);
-      border:1px solid rgba(96,165,250,0.18);
-      color:#BFDBFE;
-    }
-
-    .soft-bg{
-      background:#07111F;
-    }
-
-    .text-soft{
-      color:#94A3B8;
-    }
-
-    .project-preview{
-      height:180px;
-      border-radius:20px;
-      background:
-      linear-gradient(
-      135deg,
-      rgba(37,99,235,0.2),
-      rgba(14,165,233,0.05)
-      );
-      border:1px solid rgba(255,255,255,0.04);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:14px;
-      letter-spacing:2px;
-      color:#94A3B8;
-      margin-bottom:24px;
-    }
-
-    .blur-orb{
-      position:absolute;
-      border-radius:9999px;
-      filter:blur(90px);
-      opacity:0.25;
-      pointer-events:none;
-    }
-
-    .blur-one{
-      width:260px;
-      height:260px;
-      background:#2563EB;
-      top:10%;
-      left:-5%;
-      animation:float1 10s ease-in-out infinite;
-    }
-
-    .blur-two{
-      width:220px;
-      height:220px;
-      background:#0EA5E9;
-      bottom:10%;
-      right:-5%;
-      animation:float2 12s ease-in-out infinite;
-    }
-
-    @keyframes float1{
-      0%,100%{transform:translateY(0px);}
-      50%{transform:translateY(30px);}
-    }
-
-    @keyframes float2{
-      0%,100%{transform:translateY(0px);}
-      50%{transform:translateY(-30px);}
-    }
-
-    .reveal{
-      opacity:0;
-      transform:translateY(60px);
-      transition:1s ease;
-    }
-
-    .reveal.active{
-      opacity:1;
-      transform:translateY(0px);
-    }
-
-    @media(max-width:768px){
-
-      .section-title{
-        font-size:2.2rem;
+    @media(max-width:768px) {
+      .section-title {
+        font-size: 2.2rem;
       }
-
-      .section-padding{
-        padding-top:80px;
-        padding-bottom:80px;
-      }
-
     }
-
   </style>
 
 </head>
 
 <body>
 
-<div id="progressBar"></div>
+  <!-- NAVBAR -->
 
-<div class="blur-orb blur-one"></div>
-<div class="blur-orb blur-two"></div>
+  <nav class="fixed top-0 left-0 w-full z-50 glass">
 
-<!-- NAVBAR -->
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-<nav class="fixed top-0 left-0 w-full z-50 nav-blur border-b border-white/5">
+      <h1 class="text-2xl font-bold text-white">
+        Ananth Portfolio
+      </h1>
 
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+      <div class="hidden lg:flex gap-8 text-sm text-slate-300">
 
-    <h1 class="text-xl md:text-2xl font-bold tracking-wide">
-      Ananth Portfolio
-    </h1>
+        <a href="#about" class="hover:text-sky-400 transition">About</a>
+        <a href="#experience" class="hover:text-sky-400 transition">Experience</a>
+        <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+        <a href="#payments" class="hover:text-sky-400 transition">Payments</a>
+        <a href="#integrations" class="hover:text-sky-400 transition">Integrations</a>
+        <a href="#skills" class="hover:text-sky-400 transition">Skills</a>
+        <a href="#contact" class="hover:text-sky-400 transition">Contact</a>
 
-    <div class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
-
-      <a href="#about" class="hover:text-blue-400 transition">About</a>
-      <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
-      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
-      <a href="#payments" class="hover:text-blue-400 transition">Payments</a>
-      <a href="#integrations" class="hover:text-blue-400 transition">Integrations</a>
-      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
-      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+      </div>
 
     </div>
 
-  </div>
+  </nav>
 
-</nav>
+  <!-- HERO -->
 
-<!-- HERO -->
+  <section
+    class="hero-bg min-h-screen flex items-center justify-center px-6 text-center relative">
 
-<section class="hero-bg min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+    <div class="max-w-6xl fade-up mt-20">
 
-  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center pt-24 fade-up">
+      <div class="inline-block px-5 py-2 rounded-full glass text-sm text-sky-200 mb-8">
 
-    <div>
-
-      <div class="inline-flex items-center px-4 py-2 rounded-full glass text-blue-200 text-sm mb-8">
         Enterprise SaaS • Hospitality • Payments • AI Delivery
+
       </div>
 
-      <h1 class="text-5xl md:text-7xl xl:text-8xl font-black leading-tight tracking-tight mb-8">
+      <h1 class="text-6xl md:text-8xl font-black leading-tight mb-8 text-white">
 
-        Ananth Prasad
+        Ananth Prasad <br>
 
-        <span class="gradient-text block">
+        <span class="text-sky-400">
           Kuppan Marinath
         </span>
 
       </h1>
 
-      <p class="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+      <h2 class="text-2xl md:text-4xl text-slate-300 font-light mb-10 leading-relaxed">
 
-        Enterprise Product Strategist & Senior Business Analyst delivering
-        Hospitality SaaS, Payments Ecosystems, Enterprise Integrations and
-        AI-Assisted Product Delivery.
+        Enterprise Product Strategist <br>
+        Senior Business Analyst • Hospitality SaaS • Payments • AI Delivery
+
+      </h2>
+
+      <p class="max-w-4xl mx-auto text-lg md:text-xl text-slate-400 leading-9 mb-14">
+
+        Delivering scalable enterprise platforms across Hospitality SaaS,
+        Payment Ecosystems, Mobile Applications, Enterprise Integrations,
+        POS Platforms, AI-Assisted Product Delivery and High-Volume
+        Transaction Systems.
 
       </p>
 
-      <div class="flex flex-wrap gap-5 mb-14">
+      <div class="flex flex-wrap justify-center gap-5">
 
         <a href="#projects"
-          class="primary-btn px-8 py-4 rounded-2xl font-semibold text-white">
+          class="primary-btn px-8 py-4 rounded-2xl text-lg font-semibold text-white">
 
           Explore Portfolio
 
         </a>
 
         <a href="#experience"
-          class="glass outline-btn px-8 py-4 rounded-2xl font-semibold">
+          class="glass px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-white hover:text-black transition">
 
           View Experience
 
         </a>
 
-        <a href="Ananth_Resume_2026.pdf"
+        <a href="Ananth_Prasad_Enterprise_Portfolio_Resume.pdf"
+          target="_blank"
           download
-          class="glass outline-btn px-8 py-4 rounded-2xl font-semibold">
+          class="glass px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-white hover:text-black transition">
 
           Download Resume
 
@@ -386,295 +257,605 @@
 
       </div>
 
-    </div>
+      <!-- STATS -->
 
-    <div class="glass rounded-[32px] p-8 shadow-2xl">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24">
 
-      <div class="space-y-5">
-
-        <div class="glass-light rounded-2xl p-5">
-          Hospitality SaaS Ecosystems
+        <div class="glass rounded-3xl p-6">
+          <h3 class="text-4xl font-bold text-sky-400">8+</h3>
+          <p class="text-slate-400 mt-2">Years Experience</p>
         </div>
 
-        <div class="glass-light rounded-2xl p-5">
-          Enterprise Payment Platforms
+        <div class="glass rounded-3xl p-6">
+          <h3 class="text-4xl font-bold text-sky-400">600+</h3>
+          <p class="text-slate-400 mt-2">PBIs Managed</p>
         </div>
 
-        <div class="glass-light rounded-2xl p-5">
-          Mobile Product Delivery
+        <div class="glass rounded-3xl p-6">
+          <h3 class="text-4xl font-bold text-sky-400">30%</h3>
+          <p class="text-slate-400 mt-2">Defect Reduction</p>
         </div>
 
-        <div class="glass-light rounded-2xl p-5">
-          Enterprise Integrations & APIs
-        </div>
-
-        <div class="glass-light rounded-2xl p-5">
-          AI-Assisted Requirement Engineering
+        <div class="glass rounded-3xl p-6">
+          <h3 class="text-4xl font-bold text-sky-400">1.5M+</h3>
+          <p class="text-slate-400 mt-2">Records Processed</p>
         </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- LOGOS -->
 
-<!-- PROJECTS -->
+  <section class="py-14 border-y border-white/5 bg-[#081220]">
 
-<section id="projects" class="section-padding px-6">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-16 items-center px-6">
 
-  <div class="max-w-7xl mx-auto">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Agilysys_logo.svg"
+        class="logo-img">
 
-    <div class="text-center mb-24 reveal">
+      <img src="https://global.fujitsu/assets/ui/img/logo-fujitsu.svg"
+        class="logo-img">
 
-      <p class="uppercase tracking-[4px] text-blue-400 text-sm mb-5">
-        Enterprise Portfolio
-      </p>
+      <img src="https://hikeup.com/wp-content/uploads/2023/08/Hike-Logo.svg"
+        class="logo-img">
 
-      <h2 class="section-title mb-8">
-        Project Ecosystem
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about" class="py-32 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+
+        <h2 class="section-title text-white">
+          About Me
+        </h2>
+
+        <p class="section-sub max-w-5xl mx-auto leading-9">
+
+          Senior Business Analyst and Enterprise Product Delivery Specialist
+          with expertise across Hospitality SaaS, Enterprise Integrations,
+          Payment Ecosystems, Mobile Applications, POS Platforms,
+          AI-Assisted Product Delivery and High-Scale Transaction Systems.
+
+        </p>
+
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+
+        <div class="glass rounded-3xl p-10 card-hover">
+
+          <h3 class="text-3xl font-bold text-sky-400 mb-8">
+            Core Expertise
+          </h3>
+
+          <div class="flex flex-wrap gap-4">
+
+            <span class="tag">Hospitality SaaS</span>
+            <span class="tag">Enterprise Integrations</span>
+            <span class="tag">Payment Ecosystems</span>
+            <span class="tag">AI Product Delivery</span>
+            <span class="tag">POS Platforms</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Agile Delivery</span>
+            <span class="tag">API Validation</span>
+
+          </div>
+
+        </div>
+
+        <div class="glass rounded-3xl p-10 card-hover">
+
+          <h3 class="text-3xl font-bold text-sky-400 mb-8">
+            Tools & Technologies
+          </h3>
+
+          <div class="grid grid-cols-2 gap-4 text-slate-300">
+
+            <div>Azure DevOps</div>
+            <div>Jira</div>
+            <div>Confluence</div>
+            <div>Postman</div>
+            <div>GitHub Copilot</div>
+            <div>SSRS</div>
+            <div>SSIS</div>
+            <div>SQL</div>
+            <div>Figma</div>
+            <div>Axure</div>
+            <div>Visual Studio</div>
+            <div>Agile / Scrum</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+
+  <section id="experience" class="py-32 px-6 bg-[#081220]">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-24">
+
+        <h2 class="section-title text-white">
+          Enterprise Experience
+        </h2>
+
+        <p class="section-sub">
+          Product Delivery Across SaaS, Payments & Enterprise Systems
+        </p>
+
+      </div>
+
+      <div class="timeline space-y-14">
+
+        <!-- AGILYSYS -->
+
+        <div class="timeline-item glass rounded-3xl p-10 card-hover">
+
+          <div class="flex items-center gap-5 mb-8">
+
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Agilysys_logo.svg"
+              class="h-12">
+
+            <div>
+
+              <h3 class="text-4xl font-bold text-sky-400">
+                Agilysys
+              </h3>
+
+              <p class="text-slate-400 mt-2">
+                Senior Business Analyst • 2021 — Present
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="space-y-5 text-slate-300 leading-8 text-lg">
+
+            <p>
+              Leading enterprise product delivery across Hospitality SaaS
+              ecosystems supporting Dining, Rentals, Activities,
+              Memberships, Loyalty, Guest Apps, Mobile Reservations,
+              Check-in/Checkout experiences and Enterprise Payments.
+            </p>
+
+            <p>
+              Worked across Guest Facing Booking Products,
+              Reserve Mobile Apps, Member Access Control Apps,
+              Authorize, Service, eCash and Gift Card ecosystems.
+            </p>
+
+            <p>
+              Managed product lifecycle activities including
+              requirement gathering, PBI creation, stakeholder collaboration,
+              API validations, QA support, sprint grooming,
+              UAT execution and enterprise release planning.
+            </p>
+
+            <p>
+              Contributed to enterprise integrations with
+              Simphony, OHIP, SevenRooms, IGP, IG POS,
+              Stay PMS, Versa PMS, WorkOS,
+              Datamagine, Eatec Inventory,
+              Agilysys Central Reservations and LMS PMS.
+            </p>
+
+            <p>
+              Supported hospitality payment ecosystems including
+              FreedomPay, Shift4, Adyen, Elavon,
+              Worldpay, Google Pay, Apple Pay and ACH workflows.
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- HIKE -->
+
+        <div class="timeline-item glass rounded-3xl p-10 card-hover">
+
+          <div class="flex items-center gap-5 mb-6">
+
+            <img src="https://hikeup.com/wp-content/uploads/2023/08/Hike-Logo.svg"
+              class="h-12">
+
+            <div>
+
+              <h3 class="text-4xl font-bold text-sky-400">
+                Hike POS
+              </h3>
+
+              <p class="text-slate-400 mt-2">
+                Business Analyst / Sales Consultant
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="text-slate-300 text-lg leading-8">
+
+            Worked on cloud-based Point of Sale ecosystems competing with
+            Lightspeed, Toast and Square. Supported onboarding,
+            inventory workflows, operational flows,
+            customer demos and retail/hospitality POS experiences.
+
+          </p>
+
+        </div>
+
+        <!-- FUJITSU -->
+
+        <div class="timeline-item glass rounded-3xl p-10 card-hover">
+
+          <div class="flex items-center gap-5 mb-6">
+
+            <img src="https://global.fujitsu/assets/ui/img/logo-fujitsu.svg"
+              class="h-12">
+
+            <div>
+
+              <h3 class="text-4xl font-bold text-sky-400">
+                Fujitsu Australia
+              </h3>
+
+              <p class="text-slate-400 mt-2">
+                ETL Analyst Intern
+              </p>
+
+            </div>
+
+          </div>
+
+          <p class="text-slate-300 text-lg leading-8">
+
+            Worked on enterprise healthcare ETL systems handling
+            hospital billing statements, SSIS workflows,
+            SQL transformations, reporting pipelines,
+            enterprise reconciliation and healthcare data processing.
+
+          </p>
+
+        </div>
+
+        <!-- TECH TILT -->
+
+        <div class="timeline-item glass rounded-3xl p-10 card-hover">
+
+          <h3 class="text-4xl font-bold text-sky-400 mb-6">
+            Tech Tilt Projects
+          </h3>
+
+          <div class="space-y-5 text-slate-300 text-lg leading-8">
+
+            <p>
+              Developed Driver & Guest Cab Booking applications
+              supporting trip reservations and mobile booking workflows.
+            </p>
+
+            <p>
+              Built Futsal Booking applications supporting slot reservations
+              and sports booking experiences across multiple locations.
+            </p>
+
+            <p>
+              Worked on Printing Press portals for Australian businesses
+              showcasing cards, office prints and greeting products.
+            </p>
+
+            <p>
+              Developed eCommerce clothing websites,
+              furniture business websites and WordPress company websites.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="py-32 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-24">
+
+        <h2 class="section-title text-white">
+          Project Portfolio
+        </h2>
+
+        <p class="section-sub">
+          Enterprise Platforms • SaaS • Payments • Mobile Apps
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Membership Platform</h3>
+          <p class="text-slate-300 leading-8">Lifecycle memberships, renewals, loyalty, meal plans, household memberships and amortization workflows.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Loyalty & Promotions</h3>
+          <p class="text-slate-300 leading-8">Enterprise loyalty management ecosystem supporting promotions, member rewards and engagement experiences.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Dining Platform</h3>
+          <p class="text-slate-300 leading-8">Dining reservations, table booking workflows, venue experiences and hospitality dining operations.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Activities & Rentals</h3>
+          <p class="text-slate-300 leading-8">Activities booking, rentals, guest scheduling and reservation management ecosystems.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Reserve Mobile App</h3>
+          <p class="text-slate-300 leading-8">Mobile booking ecosystem supporting activities, dining, mobile check-in and checkout workflows.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Guest App</h3>
+          <p class="text-slate-300 leading-8">Guest-facing mobile applications improving hospitality engagement and digital guest experiences.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Gift Cards & eCash</h3>
+          <p class="text-slate-300 leading-8">Digital payment balance systems supporting gift cards, stored value and eCash workflows.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Payment Ecosystem</h3>
+          <p class="text-slate-300 leading-8">Hospitality payment orchestration supporting global payment providers and omnichannel commerce.</p>
+        </div>
+
+        <div class="glass p-10 rounded-3xl card-hover">
+          <h3 class="text-2xl font-bold text-sky-400 mb-5">Healthcare ETL Platform</h3>
+          <p class="text-slate-300 leading-8">Enterprise ETL solution handling hospital billing statements, SQL transformations and reporting pipelines.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PAYMENTS -->
+
+  <section id="payments" class="py-32 px-6 bg-[#081220]">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+
+        <h2 class="section-title text-white">
+          Payment Ecosystem
+        </h2>
+
+        <p class="section-sub">
+          Enterprise Hospitality Payment Integrations
+        </p>
+
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-5">
+
+        <span class="tag">FreedomPay</span>
+        <span class="tag">Shift4</span>
+        <span class="tag">Adyen</span>
+        <span class="tag">Worldpay</span>
+        <span class="tag">Elavon</span>
+        <span class="tag">Apple Pay</span>
+        <span class="tag">Google Pay</span>
+        <span class="tag">ACH Payments</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- INTEGRATIONS -->
+
+  <section id="integrations" class="py-32 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+
+        <h2 class="section-title text-white">
+          Enterprise Integrations
+        </h2>
+
+        <p class="section-sub">
+          Hospitality SaaS & Enterprise Ecosystems
+        </p>
+
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
+
+        <span class="tag">Simphony</span>
+        <span class="tag">OHIP</span>
+        <span class="tag">Datamagine</span>
+        <span class="tag">eForms</span>
+        <span class="tag">IGP</span>
+        <span class="tag">Agilysys Central Reservations</span>
+        <span class="tag">SevenRooms</span>
+        <span class="tag">WorkOS</span>
+        <span class="tag">Agilysys Digital Marketing</span>
+        <span class="tag">Stay PMS</span>
+        <span class="tag">Versa PMS</span>
+        <span class="tag">IG POS</span>
+        <span class="tag">Eatec Inventory</span>
+        <span class="tag">LMS PMS</span>
+        <span class="tag">IG Quick Pay</span>
+        <span class="tag">Golf</span>
+        <span class="tag">Spa</span>
+        <span class="tag">Retail</span>
+        <span class="tag">Express Kiosk</span>
+        <span class="tag">Spend</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills" class="py-32 px-6 bg-[#081220]">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+
+        <h2 class="section-title text-white">
+          Skills & Achievements
+        </h2>
+
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+
+        <div class="glass rounded-3xl p-10">
+
+          <h3 class="text-3xl font-bold text-sky-400 mb-8">
+            Core Skills
+          </h3>
+
+          <ul class="space-y-4 text-slate-300">
+
+            <li>Enterprise Product Delivery</li>
+            <li>Business Analysis</li>
+            <li>Agile & Scrum</li>
+            <li>Payment Ecosystems</li>
+            <li>Enterprise Integrations</li>
+            <li>AI-Assisted Delivery</li>
+            <li>Stakeholder Management</li>
+            <li>API Validation</li>
+
+          </ul>
+
+        </div>
+
+        <div class="glass rounded-3xl p-10">
+
+          <h3 class="text-3xl font-bold text-sky-400 mb-8">
+            Languages
+          </h3>
+
+          <ul class="space-y-4 text-slate-300">
+
+            <li>English</li>
+            <li>Tamil</li>
+
+          </ul>
+
+        </div>
+
+        <div class="glass rounded-3xl p-10">
+
+          <h3 class="text-3xl font-bold text-sky-400 mb-8">
+            Achievements
+          </h3>
+
+          <ul class="space-y-4 text-slate-300">
+
+            <li>Reduced production defects by 30%</li>
+            <li>Managed 600+ work items annually</li>
+            <li>Led enterprise product releases</li>
+            <li>Supported high-volume transaction systems</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="py-32 px-6">
+
+    <div class="max-w-5xl mx-auto text-center">
+
+      <h2 class="section-title text-white">
+        Let's Connect
       </h2>
 
-      <p class="max-w-4xl mx-auto text-soft text-xl leading-10">
-        Enterprise Hospitality SaaS, Payments, POS Platforms,
-        Mobile Applications, AI Delivery and Enterprise Integrations.
+      <p class="section-sub mb-12">
+
+        Open to Enterprise Product, SaaS, Payments,
+        AI Delivery and Senior Business Analysis opportunities.
+
       </p>
 
-    </div>
+      <div class="flex flex-wrap justify-center gap-5 mb-16">
 
-    <div class="grid-auto">
+        <a href="mailto:ananthroi@ymail.com"
+          class="primary-btn text-white px-8 py-4 rounded-2xl text-lg font-semibold">
 
-      <!-- MEMBERSHIP -->
+          Email Me
 
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+        </a>
 
-        <div class="project-preview">
-          MEMBERSHIP • LOYALTY • PROMOTIONS
-        </div>
+        <a href="https://www.linkedin.com/in/ananth-prasad-58418b6b"
+          target="_blank"
+          class="glass px-8 py-4 rounded-2xl text-lg font-semibold">
 
-        <h3 class="text-2xl font-bold mb-5">
-          Membership & Loyalty Platform
-        </h3>
+          LinkedIn
 
-        <p class="text-soft leading-8 mb-6">
-          Enterprise membership lifecycle management ecosystem supporting
-          renewals, loyalty programs, promotions, household memberships,
-          meal plans, revenue amortization and billing workflows.
-        </p>
+        </a>
 
-      </div>
+        <a href="https://github.com/ananthroi92-ship-it"
+          target="_blank"
+          class="glass px-8 py-4 rounded-2xl text-lg font-semibold">
 
-      <!-- GUEST APPS -->
+          GitHub
 
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          GUEST EXPERIENCE • MOBILE APPS
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Guest & Reserve Mobile Apps
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Mobile-first hospitality ecosystem supporting dining reservations,
-          activities booking, rentals, mobile check-in/check-out,
-          guest engagement and digital guest experiences.
-        </p>
+        </a>
 
       </div>
 
-      <!-- PAYMENTS -->
+      <div class="text-slate-500 text-sm">
 
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          PAYMENT ORCHESTRATION
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Enterprise Payment Ecosystem
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Enterprise payment orchestration platform supporting omnichannel hospitality payments,
-          payment tokenization, digital wallets, ACH transactions and payment gateway integrations.
-        </p>
-
-      </div>
-
-      <!-- GIFT CARDS -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          GIFT CARDS • ECASH • DIGITAL COMMERCE
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Gift Cards & eCash Platform
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Digital commerce platform supporting stored value cards,
-          eCash wallets, member spending workflows and integrated payment experiences.
-        </p>
-
-      </div>
-
-      <!-- ACCESS -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          ACCESS CONTROL • SECURITY
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Member Access Control App
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Hospitality access management application supporting
-          secure member authentication, venue access and digital validation workflows.
-        </p>
-
-      </div>
-
-      <!-- POS -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          POINT OF SALE • RETAIL
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Hike POS Platform
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Cloud-based Point of Sale ecosystem competing with Lightspeed and Toast,
-          supporting retail operations and transaction workflows.
-        </p>
-
-      </div>
-
-      <!-- CAB -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          DRIVER • BOOKINGS • MOBILE
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Cab Booking Platform
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Driver & guest booking application supporting
-          ride reservations, booking management and transportation workflows.
-        </p>
-
-      </div>
-
-      <!-- FUTSAL -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          SPORTS • SLOT BOOKINGS
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Futsal Booking Platform
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Sports booking ecosystem supporting futsal slot reservations,
-          venue schedules and multi-location booking experiences.
-        </p>
-
-      </div>
-
-      <!-- ECOMMERCE -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          ECOMMERCE • WORDPRESS • BUSINESS
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Business & eCommerce Websites
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Designed and delivered eCommerce platforms,
-          furniture websites, WordPress portals and printing press business websites.
-        </p>
-
-      </div>
-
-      <!-- ETL -->
-
-      <div class="glass rounded-[28px] p-8 advanced-card reveal">
-
-        <div class="project-preview">
-          HEALTHCARE • ETL • DATA
-        </div>
-
-        <h3 class="text-2xl font-bold mb-5">
-          Healthcare ETL Platform
-        </h3>
-
-        <p class="text-soft leading-8 mb-6">
-          Enterprise ETL solution handling hospital billing statements,
-          SQL transformations, SSIS workflows and reporting pipelines.
-        </p>
+        © 2026 Ananth Prasad Kuppan Marinath • Enterprise Product Strategist
 
       </div>
 
     </div>
 
-  </div>
-
-</section>
-
-<script>
-
-window.addEventListener('scroll',()=>{
-
-const scrollTop=document.documentElement.scrollTop;
-const scrollHeight=document.documentElement.scrollHeight-document.documentElement.clientHeight;
-
-const progress=(scrollTop/scrollHeight)*100;
-
-document.getElementById('progressBar').style.width=progress+'%';
-
-});
-
-const reveals=document.querySelectorAll('.reveal');
-
-window.addEventListener('scroll',()=>{
-
-for(let i=0;i<reveals.length;i++){
-
-const windowHeight=window.innerHeight;
-const revealTop=reveals[i].getBoundingClientRect().top;
-const revealPoint=120;
-
-if(revealTop<windowHeight-revealPoint){
-reveals[i].classList.add('active');
-}
-
-}
-
-});
-
-</script>
+  </section>
 
 </body>
+
 </html>
