@@ -1,241 +1,649 @@
-<!-- ========================= -->
-<!-- PREMIUM ADVANCED EFFECTS -->
-<!-- ADD THIS BEFORE </body> -->
-<!-- ========================= -->
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- SCROLL PROGRESS BAR -->
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Ananth Prasad | Enterprise Product Strategist
+  </title>
+
+  <meta name="description"
+    content="Enterprise Product Strategist & Senior Business Analyst specializing in Hospitality SaaS, Payments, Enterprise Integrations, Mobile Apps and AI-driven product delivery." />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <style>
+
+    *{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#030712;
+      color:#E2E8F0;
+      overflow-x:hidden;
+    }
+
+    ::selection{
+      background:#2563EB;
+      color:white;
+    }
+
+    #progressBar{
+      position:fixed;
+      top:0;
+      left:0;
+      height:4px;
+      width:0%;
+      z-index:99999;
+      background:linear-gradient(to right,#2563EB,#38BDF8);
+      box-shadow:0 0 20px #38BDF8;
+      transition:width 0.15s ease;
+    }
+
+    .hero-bg{
+      background:
+      radial-gradient(circle at top right,rgba(37,99,235,0.18),transparent 28%),
+      radial-gradient(circle at bottom left,rgba(14,165,233,0.12),transparent 28%),
+      linear-gradient(135deg,#020617,#07111F,#0F172A);
+    }
+
+    .glass{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.06);
+      backdrop-filter:blur(14px);
+    }
+
+    .glass-light{
+      background:rgba(255,255,255,0.02);
+      border:1px solid rgba(255,255,255,0.04);
+      backdrop-filter:blur(10px);
+    }
+
+    .gradient-text{
+      background:linear-gradient(to right,#60A5FA,#38BDF8);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .primary-btn{
+      background:linear-gradient(to right,#2563EB,#0EA5E9);
+      transition:0.35s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 35px rgba(37,99,235,0.28);
+    }
+
+    .primary-btn::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.2),
+      transparent
+      );
+      transition:0.7s ease;
+    }
+
+    .primary-btn:hover::before{
+      left:100%;
+    }
+
+    .outline-btn{
+      transition:0.35s ease;
+    }
+
+    .outline-btn:hover{
+      background:white;
+      color:black;
+      transform:translateY(-3px);
+    }
+
+    .advanced-card{
+      position:relative;
+      transition:0.4s ease;
+      overflow:hidden;
+    }
+
+    .advanced-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(96,165,250,0.4);
+      box-shadow:0 20px 60px rgba(37,99,235,0.15);
+    }
+
+    .advanced-card::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+      135deg,
+      transparent,
+      rgba(255,255,255,0.03),
+      transparent
+      );
+      transform:translateX(-100%);
+      transition:0.7s ease;
+    }
+
+    .advanced-card:hover::after{
+      transform:translateX(100%);
+    }
+
+    .fade-up{
+      animation:fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(35px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0px);
+      }
+    }
+
+    .logo-img{
+      height:34px;
+      object-fit:contain;
+      opacity:0.8;
+      filter:grayscale(100%) brightness(1.4);
+      transition:0.3s ease;
+    }
+
+    .logo-img:hover{
+      opacity:1;
+      filter:grayscale(0%);
+      transform:scale(1.05);
+    }
+
+    .section-title{
+      font-size:3rem;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:-2px;
+    }
+
+    .nav-blur{
+      background:rgba(3,7,18,0.72);
+      backdrop-filter:blur(14px);
+    }
+
+    .grid-auto{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:24px;
+    }
+
+    .section-padding{
+      padding-top:110px;
+      padding-bottom:110px;
+    }
+
+    .tag{
+      background:rgba(37,99,235,0.12);
+      border:1px solid rgba(96,165,250,0.18);
+      color:#BFDBFE;
+    }
+
+    .soft-bg{
+      background:#07111F;
+    }
+
+    .text-soft{
+      color:#94A3B8;
+    }
+
+    .project-preview{
+      height:180px;
+      border-radius:20px;
+      background:
+      linear-gradient(
+      135deg,
+      rgba(37,99,235,0.2),
+      rgba(14,165,233,0.05)
+      );
+      border:1px solid rgba(255,255,255,0.04);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:14px;
+      letter-spacing:2px;
+      color:#94A3B8;
+      margin-bottom:24px;
+    }
+
+    .blur-orb{
+      position:absolute;
+      border-radius:9999px;
+      filter:blur(90px);
+      opacity:0.25;
+      pointer-events:none;
+    }
+
+    .blur-one{
+      width:260px;
+      height:260px;
+      background:#2563EB;
+      top:10%;
+      left:-5%;
+      animation:float1 10s ease-in-out infinite;
+    }
+
+    .blur-two{
+      width:220px;
+      height:220px;
+      background:#0EA5E9;
+      bottom:10%;
+      right:-5%;
+      animation:float2 12s ease-in-out infinite;
+    }
+
+    @keyframes float1{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(30px);}
+    }
+
+    @keyframes float2{
+      0%,100%{transform:translateY(0px);}
+      50%{transform:translateY(-30px);}
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(60px);
+      transition:1s ease;
+    }
+
+    .reveal.active{
+      opacity:1;
+      transform:translateY(0px);
+    }
+
+    @media(max-width:768px){
+
+      .section-title{
+        font-size:2.2rem;
+      }
+
+      .section-padding{
+        padding-top:80px;
+        padding-bottom:80px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
 <div id="progressBar"></div>
 
-<style>
-
-#progressBar{
-position:fixed;
-top:0;
-left:0;
-height:4px;
-width:0%;
-z-index:99999;
-background:linear-gradient(to right,#2563EB,#38BDF8);
-box-shadow:0 0 20px #38BDF8;
-transition:width 0.15s ease;
-}
-
-/* PREMIUM GLOW */
-
-.premium-glow{
-position:relative;
-overflow:hidden;
-}
-
-.premium-glow::before{
-content:'';
-position:absolute;
-width:300px;
-height:300px;
-background:radial-gradient(circle,rgba(56,189,248,0.18),transparent 70%);
-top:-120px;
-right:-120px;
-pointer-events:none;
-}
-
-/* FLOATING BLUR */
-
-.blur-orb{
-position:absolute;
-border-radius:9999px;
-filter:blur(90px);
-opacity:0.25;
-pointer-events:none;
-}
-
-.blur-one{
-width:260px;
-height:260px;
-background:#2563EB;
-top:10%;
-left:-5%;
-animation:float1 10s ease-in-out infinite;
-}
-
-.blur-two{
-width:220px;
-height:220px;
-background:#0EA5E9;
-bottom:10%;
-right:-5%;
-animation:float2 12s ease-in-out infinite;
-}
-
-@keyframes float1{
-0%,100%{transform:translateY(0px);}
-50%{transform:translateY(30px);}
-}
-
-@keyframes float2{
-0%,100%{transform:translateY(0px);}
-50%{transform:translateY(-30px);}
-}
-
-/* ADVANCED CARD */
-
-.advanced-card{
-position:relative;
-transition:0.4s ease;
-overflow:hidden;
-}
-
-.advanced-card:hover{
-transform:translateY(-10px) scale(1.01);
-border-color:rgba(96,165,250,0.4);
-box-shadow:0 20px 60px rgba(37,99,235,0.15);
-}
-
-.advanced-card::after{
-content:'';
-position:absolute;
-inset:0;
-background:linear-gradient(
-135deg,
-transparent,
-rgba(255,255,255,0.03),
-transparent
-);
-transform:translateX(-100%);
-transition:0.7s ease;
-}
-
-.advanced-card:hover::after{
-transform:translateX(100%);
-}
-
-/* EXPERIENCE TIMELINE */
-
-.timeline{
-position:relative;
-padding-left:40px;
-}
-
-.timeline::before{
-content:'';
-position:absolute;
-left:10px;
-top:0;
-width:2px;
-height:100%;
-background:rgba(255,255,255,0.08);
-}
-
-.timeline-dot{
-position:absolute;
-left:0;
-top:14px;
-width:22px;
-height:22px;
-border-radius:9999px;
-background:linear-gradient(to right,#2563EB,#38BDF8);
-box-shadow:0 0 20px rgba(56,189,248,0.6);
-}
-
-/* SECTION DIVIDER */
-
-.section-divider{
-height:1px;
-background:linear-gradient(
-to right,
-transparent,
-rgba(255,255,255,0.08),
-transparent
-);
-}
-
-/* REVEAL ANIMATION */
-
-.reveal{
-opacity:0;
-transform:translateY(60px);
-transition:1s ease;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0px);
-}
-
-/* PROJECT IMAGE PLACEHOLDER */
-
-.project-preview{
-height:180px;
-border-radius:20px;
-background:
-linear-gradient(
-135deg,
-rgba(37,99,235,0.2),
-rgba(14,165,233,0.05)
-);
-border:1px solid rgba(255,255,255,0.04);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:14px;
-letter-spacing:2px;
-color:#94A3B8;
-margin-bottom:24px;
-}
-
-/* PREMIUM BUTTON */
-
-.premium-btn{
-position:relative;
-overflow:hidden;
-}
-
-.premium-btn::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,0.2),
-transparent
-);
-transition:0.7s ease;
-}
-
-.premium-btn:hover::before{
-left:100%;
-}
-
-/* MOBILE MENU */
-
-.mobile-menu{
-display:none;
-}
-
-@media(max-width:1024px){
-
-.desktop-nav{
-display:none;
-}
-
-.mobile-menu{
-display:flex;
-}
-
-}
-
-</style>
-
-<!-- FLOATING ORBS -->
 <div class="blur-orb blur-one"></div>
 <div class="blur-orb blur-two"></div>
 
-<script>
+<!-- NAVBAR -->
 
-/* SCROLL PROGRESS */
+<nav class="fixed top-0 left-0 w-full z-50 nav-blur border-b border-white/5">
+
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
+
+    <h1 class="text-xl md:text-2xl font-bold tracking-wide">
+      Ananth Portfolio
+    </h1>
+
+    <div class="hidden lg:flex items-center gap-8 text-sm text-slate-300">
+
+      <a href="#about" class="hover:text-blue-400 transition">About</a>
+      <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+      <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+      <a href="#payments" class="hover:text-blue-400 transition">Payments</a>
+      <a href="#integrations" class="hover:text-blue-400 transition">Integrations</a>
+      <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero-bg min-h-screen flex items-center justify-center px-6 relative overflow-hidden">
+
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center pt-24 fade-up">
+
+    <div>
+
+      <div class="inline-flex items-center px-4 py-2 rounded-full glass text-blue-200 text-sm mb-8">
+        Enterprise SaaS • Hospitality • Payments • AI Delivery
+      </div>
+
+      <h1 class="text-5xl md:text-7xl xl:text-8xl font-black leading-tight tracking-tight mb-8">
+
+        Ananth Prasad
+
+        <span class="gradient-text block">
+          Kuppan Marinath
+        </span>
+
+      </h1>
+
+      <p class="text-xl md:text-2xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+
+        Enterprise Product Strategist & Senior Business Analyst delivering
+        Hospitality SaaS, Payments Ecosystems, Enterprise Integrations and
+        AI-Assisted Product Delivery.
+
+      </p>
+
+      <div class="flex flex-wrap gap-5 mb-14">
+
+        <a href="#projects"
+          class="primary-btn px-8 py-4 rounded-2xl font-semibold text-white">
+
+          Explore Portfolio
+
+        </a>
+
+        <a href="#experience"
+          class="glass outline-btn px-8 py-4 rounded-2xl font-semibold">
+
+          View Experience
+
+        </a>
+
+        <a href="Ananth_Resume_2026.pdf"
+          download
+          class="glass outline-btn px-8 py-4 rounded-2xl font-semibold">
+
+          Download Resume
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="glass rounded-[32px] p-8 shadow-2xl">
+
+      <div class="space-y-5">
+
+        <div class="glass-light rounded-2xl p-5">
+          Hospitality SaaS Ecosystems
+        </div>
+
+        <div class="glass-light rounded-2xl p-5">
+          Enterprise Payment Platforms
+        </div>
+
+        <div class="glass-light rounded-2xl p-5">
+          Mobile Product Delivery
+        </div>
+
+        <div class="glass-light rounded-2xl p-5">
+          Enterprise Integrations & APIs
+        </div>
+
+        <div class="glass-light rounded-2xl p-5">
+          AI-Assisted Requirement Engineering
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects" class="section-padding px-6">
+
+  <div class="max-w-7xl mx-auto">
+
+    <div class="text-center mb-24 reveal">
+
+      <p class="uppercase tracking-[4px] text-blue-400 text-sm mb-5">
+        Enterprise Portfolio
+      </p>
+
+      <h2 class="section-title mb-8">
+        Project Ecosystem
+      </h2>
+
+      <p class="max-w-4xl mx-auto text-soft text-xl leading-10">
+        Enterprise Hospitality SaaS, Payments, POS Platforms,
+        Mobile Applications, AI Delivery and Enterprise Integrations.
+      </p>
+
+    </div>
+
+    <div class="grid-auto">
+
+      <!-- MEMBERSHIP -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          MEMBERSHIP • LOYALTY • PROMOTIONS
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Membership & Loyalty Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Enterprise membership lifecycle management ecosystem supporting
+          renewals, loyalty programs, promotions, household memberships,
+          meal plans, revenue amortization and billing workflows.
+        </p>
+
+      </div>
+
+      <!-- GUEST APPS -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          GUEST EXPERIENCE • MOBILE APPS
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Guest & Reserve Mobile Apps
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Mobile-first hospitality ecosystem supporting dining reservations,
+          activities booking, rentals, mobile check-in/check-out,
+          guest engagement and digital guest experiences.
+        </p>
+
+      </div>
+
+      <!-- PAYMENTS -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          PAYMENT ORCHESTRATION
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Enterprise Payment Ecosystem
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Enterprise payment orchestration platform supporting omnichannel hospitality payments,
+          payment tokenization, digital wallets, ACH transactions and payment gateway integrations.
+        </p>
+
+      </div>
+
+      <!-- GIFT CARDS -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          GIFT CARDS • ECASH • DIGITAL COMMERCE
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Gift Cards & eCash Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Digital commerce platform supporting stored value cards,
+          eCash wallets, member spending workflows and integrated payment experiences.
+        </p>
+
+      </div>
+
+      <!-- ACCESS -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          ACCESS CONTROL • SECURITY
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Member Access Control App
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Hospitality access management application supporting
+          secure member authentication, venue access and digital validation workflows.
+        </p>
+
+      </div>
+
+      <!-- POS -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          POINT OF SALE • RETAIL
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Hike POS Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Cloud-based Point of Sale ecosystem competing with Lightspeed and Toast,
+          supporting retail operations and transaction workflows.
+        </p>
+
+      </div>
+
+      <!-- CAB -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          DRIVER • BOOKINGS • MOBILE
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Cab Booking Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Driver & guest booking application supporting
+          ride reservations, booking management and transportation workflows.
+        </p>
+
+      </div>
+
+      <!-- FUTSAL -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          SPORTS • SLOT BOOKINGS
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Futsal Booking Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Sports booking ecosystem supporting futsal slot reservations,
+          venue schedules and multi-location booking experiences.
+        </p>
+
+      </div>
+
+      <!-- ECOMMERCE -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          ECOMMERCE • WORDPRESS • BUSINESS
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Business & eCommerce Websites
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Designed and delivered eCommerce platforms,
+          furniture websites, WordPress portals and printing press business websites.
+        </p>
+
+      </div>
+
+      <!-- ETL -->
+
+      <div class="glass rounded-[28px] p-8 advanced-card reveal">
+
+        <div class="project-preview">
+          HEALTHCARE • ETL • DATA
+        </div>
+
+        <h3 class="text-2xl font-bold mb-5">
+          Healthcare ETL Platform
+        </h3>
+
+        <p class="text-soft leading-8 mb-6">
+          Enterprise ETL solution handling hospital billing statements,
+          SQL transformations, SSIS workflows and reporting pipelines.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
 
 window.addEventListener('scroll',()=>{
 
@@ -247,8 +655,6 @@ const progress=(scrollTop/scrollHeight)*100;
 document.getElementById('progressBar').style.width=progress+'%';
 
 });
-
-/* REVEAL EFFECT */
 
 const reveals=document.querySelectorAll('.reveal');
 
@@ -269,3 +675,6 @@ reveals[i].classList.add('active');
 });
 
 </script>
+
+</body>
+</html>
