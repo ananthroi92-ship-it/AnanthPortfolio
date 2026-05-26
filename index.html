@@ -16,9 +16,14 @@
     rel="stylesheet">
 
   <style>
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #0F172A;
+      background: #020617;
       color: white;
       overflow-x: hidden;
     }
@@ -45,27 +50,62 @@
     }
 
     .btn-primary:hover {
-      opacity: 0.9;
       transform: translateY(-2px);
       transition: 0.3s ease;
     }
+
+    .section-dark {
+      background: #020617;
+    }
+
+    .section-light {
+      background: #F8FAFC;
+      color: black;
+    }
+
   </style>
 
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- NAVBAR -->
 
-  <section
-    class="hero-bg min-h-screen flex items-center justify-center px-6 text-center relative overflow-hidden">
+  <nav class="fixed top-0 left-0 w-full z-50 glass-card">
 
-    <div class="max-w-5xl">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-5">
 
-      <div
-        class="inline-block px-5 py-2 rounded-full glass-card text-sm mb-8 text-blue-200">
+      <h1 class="text-2xl font-bold">
+        Ananth Portfolio
+      </h1>
 
-        Enterprise SaaS • Payments • Hospitality • AI-Driven Delivery
+      <div class="hidden md:flex gap-8 text-gray-300">
+
+        <a href="#about" class="hover:text-blue-400 transition">About</a>
+
+        <a href="#experience" class="hover:text-blue-400 transition">Experience</a>
+
+        <a href="#projects" class="hover:text-blue-400 transition">Projects</a>
+
+        <a href="#payments" class="hover:text-blue-400 transition">Payments</a>
+
+        <a href="#integrations" class="hover:text-blue-400 transition">Integrations</a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero-bg min-h-screen flex items-center justify-center text-center px-6">
+
+    <div class="max-w-5xl mt-20">
+
+      <div class="inline-block px-5 py-2 rounded-full glass-card text-sm mb-8 text-blue-200">
+
+        Enterprise SaaS • Hospitality • Payments • AI Delivery
 
       </div>
 
@@ -79,17 +119,17 @@
 
       </h1>
 
-      <h2 class="text-2xl md:text-3xl text-gray-300 font-light mb-10">
+      <h2 class="text-2xl md:text-3xl text-gray-300 mb-10">
 
         Senior Product & Business Solutions Consultant
 
       </h2>
 
-      <p class="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-8 mb-12">
+      <p class="max-w-4xl mx-auto text-xl text-gray-400 leading-9 mb-14">
 
         Delivering scalable enterprise platforms across Hospitality SaaS,
         Payments Ecosystems, Mobile Applications, Enterprise Integrations,
-        AI-Assisted Product Delivery, and High-Volume Transaction Systems.
+        AI-Assisted Product Delivery and High-Volume Transaction Systems.
 
       </p>
 
@@ -116,34 +156,110 @@
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-24">
 
         <div class="glass-card rounded-3xl p-6">
-
           <h3 class="text-4xl font-bold blue-text">8+</h3>
-
           <p class="text-gray-400 mt-2">Years Experience</p>
-
         </div>
 
         <div class="glass-card rounded-3xl p-6">
-
           <h3 class="text-4xl font-bold blue-text">600+</h3>
-
           <p class="text-gray-400 mt-2">Work Items Managed</p>
-
         </div>
 
         <div class="glass-card rounded-3xl p-6">
-
           <h3 class="text-4xl font-bold blue-text">30%</h3>
-
           <p class="text-gray-400 mt-2">Defect Reduction</p>
-
         </div>
 
         <div class="glass-card rounded-3xl p-6">
-
           <h3 class="text-4xl font-bold blue-text">1.5M</h3>
-
           <p class="text-gray-400 mt-2">Records Processed</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about" class="section-light py-32 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-20">
+
+        <h2 class="text-5xl font-bold mb-8">
+          About Me
+        </h2>
+
+        <p class="max-w-4xl mx-auto text-xl text-gray-600 leading-9">
+
+          Senior Business Analyst and Product Delivery Specialist with expertise in
+          Enterprise SaaS Platforms, Hospitality Technology, Payments Ecosystems,
+          Mobile Applications, AI-Assisted Product Delivery and Enterprise Integrations.
+
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <div class="bg-white rounded-3xl p-10 shadow-2xl">
+
+          <h3 class="text-3xl font-bold text-blue-600 mb-8">
+            Enterprise Experience
+          </h3>
+
+          <ul class="space-y-5 text-lg text-gray-700">
+
+            <li>• 8+ Years across SaaS & Enterprise Systems</li>
+
+            <li>• Product Delivery across Payments & Reservations</li>
+
+            <li>• AI-Assisted Requirement Engineering</li>
+
+            <li>• Agile & Scrum Delivery Leadership</li>
+
+            <li>• Enterprise Integration Architecture</li>
+
+          </ul>
+
+        </div>
+
+        <div class="bg-white rounded-3xl p-10 shadow-2xl">
+
+          <h3 class="text-3xl font-bold text-blue-600 mb-8">
+            Core Expertise
+          </h3>
+
+          <div class="flex flex-wrap gap-4">
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              Hospitality SaaS
+            </span>
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              Payment Systems
+            </span>
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              Mobile Apps
+            </span>
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              Enterprise Integrations
+            </span>
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              POS Platforms
+            </span>
+
+            <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+              AI Delivery
+            </span>
+
+          </div>
 
         </div>
 
@@ -152,83 +268,153 @@
     </div>
 
   </section>
-<!-- ABOUT SECTION -->
 
-<section id="about" class="py-32 px-6 bg-white text-black">
+  <!-- EXPERIENCE -->
 
-  <div class="max-w-7xl mx-auto">
+  <section id="experience" class="section-dark py-32 px-6">
 
-    <div class="mb-20 text-center">
+    <div class="max-w-7xl mx-auto">
 
-      <h2 class="text-5xl font-bold mb-6">
-        About Me
-      </h2>
+      <div class="text-center mb-24">
 
-      <p class="text-gray-600 max-w-4xl mx-auto text-xl leading-9">
-
-        Senior Business Analyst and Product Delivery Specialist with expertise in
-        Enterprise SaaS Platforms, Hospitality Technology, Payments Ecosystems,
-        Mobile Applications, AI-Assisted Product Delivery, and Enterprise Integrations.
-
-      </p>
-
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-12">
-
-      <div class="bg-slate-100 rounded-3xl p-10 shadow-xl">
-
-        <h3 class="text-3xl font-bold mb-6 text-blue-600">
+        <h2 class="text-5xl font-bold mb-6">
           Enterprise Experience
-        </h3>
+        </h2>
 
-        <ul class="space-y-5 text-lg text-gray-700">
-
-          <li>• 8+ Years across Hospitality, SaaS & Enterprise Systems</li>
-
-          <li>• Led Product Delivery across Payments & Reservations Platforms</li>
-
-          <li>• Managed 600+ Work Items annually</li>
-
-          <li>• Reduced Production Defects by 30%</li>
-
-          <li>• Experience with AI-Assisted Requirement Engineering</li>
-
-        </ul>
+        <p class="text-xl text-gray-400">
+          Product Delivery across SaaS, Payments & Enterprise Systems
+        </p>
 
       </div>
 
-      <div class="bg-slate-100 rounded-3xl p-10 shadow-xl">
+      <div class="space-y-10">
 
-        <h3 class="text-3xl font-bold mb-6 text-blue-600">
-          Core Domains
-        </h3>
+        <div class="glass-card rounded-3xl p-10">
 
-        <div class="flex flex-wrap gap-4">
+          <h3 class="text-4xl font-bold text-blue-400 mb-4">
+            Agilysys
+          </h3>
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
-            Hospitality SaaS
-          </span>
+          <p class="text-xl text-gray-300 mb-6">
+            Senior Business Analyst • 2021 — Present
+          </p>
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
-            Payment Systems
-          </span>
+          <p class="text-gray-300 leading-8 text-lg">
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
+            Leading enterprise product delivery across Memberships,
+            Dining, Activities, Mobile Apps, Payments Ecosystems,
+            Loyalty Systems and Enterprise Integrations.
+
+          </p>
+
+        </div>
+
+        <div class="glass-card rounded-3xl p-10">
+
+          <h3 class="text-4xl font-bold text-blue-400 mb-4">
+            Hike POS
+          </h3>
+
+          <p class="text-xl text-gray-300 mb-6">
+            Business Analyst / Sales Consultant
+          </p>
+
+          <p class="text-gray-300 leading-8 text-lg">
+
+            Worked on cloud-based Point of Sale systems competing with
+            Lightspeed and Toast across Retail and Hospitality operations.
+
+          </p>
+
+        </div>
+
+        <div class="glass-card rounded-3xl p-10">
+
+          <h3 class="text-4xl font-bold text-blue-400 mb-4">
+            Fujitsu Australia
+          </h3>
+
+          <p class="text-xl text-gray-300 mb-6">
+            ETL Analyst Intern
+          </p>
+
+          <p class="text-gray-300 leading-8 text-lg">
+
+            Worked on healthcare ETL systems handling hospital billing data,
+            extraction workflows and enterprise reporting pipelines.
+
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="section-light py-32 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-24">
+
+        <h2 class="text-5xl font-bold mb-6">
+          Enterprise Product Ecosystem
+        </h2>
+
+        <p class="text-xl text-gray-600">
+          Hospitality SaaS & Enterprise Platforms
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="bg-white rounded-3xl p-10 shadow-2xl">
+
+          <h3 class="text-3xl font-bold text-blue-600 mb-5">
+            Membership & Loyalty
+          </h3>
+
+          <p class="text-gray-700 leading-8">
+
+            Membership lifecycle management, loyalty ecosystems,
+            meal plans, promotions and revenue amortization.
+
+          </p>
+
+        </div>
+
+        <div class="bg-white rounded-3xl p-10 shadow-2xl">
+
+          <h3 class="text-3xl font-bold text-blue-600 mb-5">
             Mobile Applications
-          </span>
+          </h3>
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
-            Enterprise Integrations
-          </span>
+          <p class="text-gray-700 leading-8">
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
-            POS Systems
-          </span>
+            Guest apps, dining reservations, mobile check-in,
+            activities booking and member access ecosystems.
 
-          <span class="bg-blue-100 text-blue-700 px-5 py-3 rounded-xl">
-            AI-Driven Delivery
-          </span>
+          </p>
+
+        </div>
+
+        <div class="bg-white rounded-3xl p-10 shadow-2xl">
+
+          <h3 class="text-3xl font-bold text-blue-600 mb-5">
+            POS & Commerce
+          </h3>
+
+          <p class="text-gray-700 leading-8">
+
+            Enterprise POS platforms, retail systems,
+            payment orchestration and commerce ecosystems.
+
+          </p>
 
         </div>
 
@@ -236,214 +422,49 @@
 
     </div>
 
-  </div>
+  </section>
 
-</section>
+  <!-- PAYMENTS -->
 
+  <section id="payments" class="section-dark py-32 px-6">
 
-<!-- EXPERIENCE SECTION -->
+    <div class="max-w-7xl mx-auto">
 
-<section id="experience" class="py-32 px-6 bg-slate-950">
+      <div class="text-center mb-20">
 
-  <div class="max-w-7xl mx-auto">
-
-    <div class="text-center mb-24">
-
-      <h2 class="text-5xl font-bold mb-6">
-        Enterprise Experience
-      </h2>
-
-      <p class="text-xl text-gray-400">
-        Product Delivery across SaaS, Payments & Enterprise Platforms
-      </p>
-
-    </div>
-
-    <div class="space-y-10">
-
-      <!-- AGILYSYS -->
-
-      <div class="glass-card rounded-3xl p-10">
-
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-
-          <div>
-
-            <h3 class="text-4xl font-bold mb-3 text-blue-400">
-              Agilysys
-            </h3>
-
-            <p class="text-xl text-gray-300">
-              Senior Business Analyst
-            </p>
-
-          </div>
-
-          <div class="text-gray-400 text-lg mt-4 md:mt-0">
-            2021 — Present
-          </div>
-
-        </div>
-
-        <p class="text-gray-300 text-lg leading-8 mb-8">
-
-          Leading enterprise product delivery across Hospitality SaaS,
-          Memberships, Dining, Activities, Payment Ecosystems,
-          Mobile Applications, and Enterprise Integrations.
-
-        </p>
-
-        <div class="flex flex-wrap gap-4">
-
-          <span class="bg-blue-500/20 text-blue-300 px-5 py-3 rounded-xl">
-            Payments
-          </span>
-
-          <span class="bg-blue-500/20 text-blue-300 px-5 py-3 rounded-xl">
-            Memberships
-          </span>
-
-          <span class="bg-blue-500/20 text-blue-300 px-5 py-3 rounded-xl">
-            Mobile Apps
-          </span>
-
-          <span class="bg-blue-500/20 text-blue-300 px-5 py-3 rounded-xl">
-            Enterprise Integrations
-          </span>
-
-        </div>
-
-      </div>
-
-      <!-- HIKE POS -->
-
-      <div class="glass-card rounded-3xl p-10">
-
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-
-          <div>
-
-            <h3 class="text-4xl font-bold mb-3 text-blue-400">
-              Hike POS
-            </h3>
-
-            <p class="text-xl text-gray-300">
-              Business Analyst / Sales Consultant
-            </p>
-
-          </div>
-
-        </div>
-
-        <p class="text-gray-300 text-lg leading-8">
-
-          Worked on cloud-based Point of Sale systems competing with
-          Lightspeed and Toast across Retail and Hospitality operations.
-
-        </p>
-
-      </div>
-
-      <!-- FUJITSU -->
-
-      <div class="glass-card rounded-3xl p-10">
-
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
-
-          <div>
-
-            <h3 class="text-4xl font-bold mb-3 text-blue-400">
-              Fujitsu Australia
-            </h3>
-
-            <p class="text-xl text-gray-300">
-              ETL Analyst Intern
-            </p>
-
-          </div>
-
-        </div>
-
-        <p class="text-gray-300 text-lg leading-8">
-
-          Worked on healthcare ETL systems handling extraction,
-          transformation and reporting of hospital billing data.
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRODUCT ECOSYSTEM -->
-
-<section id="projects" class="py-32 px-6 bg-white text-black">
-
-  <div class="max-w-7xl mx-auto">
-
-    <div class="text-center mb-24">
-
-      <h2 class="text-5xl font-bold mb-6">
-        Enterprise Product Ecosystem
-      </h2>
-
-      <p class="text-xl text-gray-600">
-        Large-scale Hospitality & SaaS Platforms
-      </p>
-
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-
-      <div class="bg-slate-100 p-10 rounded-3xl shadow-xl">
-
-        <h3 class="text-3xl font-bold mb-5 text-blue-600">
-          Membership & Loyalty
-        </h3>
-
-        <p class="text-gray-700 leading-8">
-          Membership lifecycle management, renewals,
-          meal plans, loyalty programs and revenue amortization.
-        </p>
-
-      </div>
-
-      <div class="bg-slate-100 p-10 rounded-3xl shadow-xl">
-
-        <h3 class="text-3xl font-bold mb-5 text-blue-600">
+        <h2 class="text-5xl font-bold mb-6">
           Payment Ecosystem
-        </h3>
+        </h2>
 
-        <p class="text-gray-700 leading-8">
-          Enterprise payment orchestration supporting
-          FreedomPay, Adyen, Shift4, Apple Pay and ACH workflows.
+        <p class="text-xl text-gray-400">
+          Enterprise Hospitality Payment Integrations
         </p>
 
       </div>
 
-      <div class="bg-slate-100 p-10 rounded-3xl shadow-xl">
+      <div class="grid md:grid-cols-3 gap-8">
 
-        <h3 class="text-3xl font-bold mb-5 text-blue-600">
-          Mobile Applications
-        </h3>
+        <div class="glass-card p-10 rounded-3xl">
+          <h3 class="text-2xl font-bold mb-4 text-blue-400">FreedomPay</h3>
+          <p class="text-gray-300">Open commerce payment ecosystem for hospitality.</p>
+        </div>
 
-        <p class="text-gray-700 leading-8">
-          Guest Apps, Dining Reservations,
-          Activities Booking and Mobile Check-in ecosystems.
-        </p>
+        <div class="glass-card p-10 rounded-3xl">
+          <h3 class="text-2xl font-bold mb-4 text-blue-400">Adyen</h3>
+          <p class="text-gray-300">Unified omnichannel payment processing.</p>
+        </div>
+
+        <div class="glass-card p-10 rounded-3xl">
+          <h3 class="text-2xl font-bold mb-4 text-blue-400">Shift4</h3>
+          <p class="text-gray-300">Secure hospitality transaction processing.</p>
+        </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 </body>
 
 </html>
